@@ -1,5 +1,9 @@
 PODS:
-  - LJJRouter (0.1.0)
+  - LJJRouter (0.4.0):
+    - MZFormSheetPresentationController (~> 2.4.2)
+  - MZAppearance (1.1.6)
+  - MZFormSheetPresentationController (2.4.3):
+    - MZAppearance
 
 DEPENDENCIES:
   - LJJRouter (from `../`)
@@ -9,8 +13,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LJJRouter: e33f38a0d8d932db2c378274206729824d01feed
+  LJJRouter: dc4536186c128eb55943caeff3c1de27512aaada
+  MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
+  MZFormSheetPresentationController: fbfdbad31884f16fac17fbe3c44c168306cc1095
 
 PODFILE CHECKSUM: c8c9d3fe41b1c75265806dfb524ab04d3f3a43d5
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0.beta.2

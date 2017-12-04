@@ -12,6 +12,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Requirements
 
 ## Useage
+ViewController想要支持LJJRouter的跳转，需要实现LJJRouterViewControllerInstantiation协议中的方法instantiateViewController，提供ViewController的实例。普通viewController初始化在.m文件里添加#LJJRouterInitPage()，storyboard启动的viewController初始化是#LJJRouterInitPageFromStoryboard(StoryboardName,StoryboardID)
+为LJJRouter设置初始ViewController，需要在App启动时第一个调用
 
 ## Installation
 

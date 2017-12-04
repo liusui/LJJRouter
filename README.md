@@ -15,8 +15,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```ruby
 + (void)startupWithHomeViewController:(NSString *)viewControllerName
 ```
-为LJJRouter设置初始ViewController，需要在App启动时第一个调用
-ViewController想要支持LJJRouter的跳转，需要实现```LJJRouterViewControllerInstantiation```协议中的方法```instantiateViewController```，提供ViewController的实例。普通viewController初始化在.m文件里添加```LJJRouterInitPage()```，storyboard启动的viewController初始化是添加```LJJRouterInitPageFromStoryboard(StoryboardName,StoryboardID)```，初始化完成就可以进行跳转 比如LJJHomeViewController，跳转时可使用
+为```LJJRouter```设置初始```ViewController```，需要在App启动时第一个调用
+```ViewController```想要支持LJJRouter的跳转，需要实现```LJJRouterViewControllerInstantiation```协议中的方法```instantiateViewController```，提供```ViewController```的实例。普通```viewController```初始化在.m文件里添加```LJJRouterInitPage()```，```storyboard```启动的```viewController```初始化是添加```LJJRouterInitPageFromStoryboard(StoryboardName,StoryboardID)```，初始化完成就可以进行跳转 比如LJJHomeViewController，跳转时可使用
 
 ```ruby
 [[LJJRouter shared] navigateTo:@"LJJHomeViewController" arguments:@{@"content":@"Hello"}]; 或者

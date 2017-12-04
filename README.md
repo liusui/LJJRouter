@@ -17,10 +17,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 + (void)startupWithHomeViewController:(NSString *)viewControllerName
 ```
 ```ViewController```想要支持LJJRouter的跳转，需要实现```LJJRouterViewControllerInstantiation```协议中的方法```instantiateViewController```，提供```ViewController```的实例。
-普通```viewController```初始化在.m文件里添加```LJJRouterInitPage()```
-
-```storyboard```启动的```viewController```初始化是添加```LJJRouterInitPageFromStoryboard(StoryboardName,StoryboardID)```
-
+普通```viewController```初始化在.m文件里添加```LJJRouterInitPage()```,
+```storyboard```启动的```viewController```初始化是添加```LJJRouterInitPageFromStoryboard(StoryboardName,StoryboardID)```,
 初始化完成就可以进行跳转 
 比如```LJJHomeViewController```，跳转时可使用
 

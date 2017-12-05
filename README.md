@@ -9,8 +9,6 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Useage
 在App启动时需要第一个调用，实现下面的方法，为```LJJRouter```设置初始```ViewController```
 ```ruby

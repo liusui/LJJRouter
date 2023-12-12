@@ -24,11 +24,11 @@ jobs:
     - name: Install Brew
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+    - name: Install CocoaPods
+      run: brew install cocoapods
+      
     - name: Install Dependencies
       run: brew install fastlane
-      
-    - name: Install CocoaPods
-      run: gem install cocoapods
 
     - name: Build and Deploy with Fastlane
-      run: brew fastlane alpha
+      run: fastlane ios alpha

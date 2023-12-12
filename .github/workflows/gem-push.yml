@@ -1,4 +1,4 @@
-name: Ruby Gem
+name: CI
 
 on:
   push:
@@ -17,12 +17,20 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
+    
+    - name: Set default Xcode version
+    run: |
+      echo "Switching Xcode to version '13.0'..."
+      xcode-select --switch /Applications/Xcode_14.2.app
 
     - name: Install Bundler
       run: gem install bundler
-     
-    - name: Install Brew
-      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-    - name: Build and Deploy with Fastlane
-      run: fastlane ios alpha
+    - name: Install gems
+        run: bundle install
+
+    - name: Install pods
+        run: bundle exec pod install
+
+    - name: Build and upload
+        run: bundle exec fastlane alpha

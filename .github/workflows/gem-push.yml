@@ -20,8 +20,6 @@ jobs:
 
     - name: Set up Xcode
       uses: actions/setup-xcode@latest
-      with:
-        xcode-version: '14.2'  # 选择您的 Xcode 版本
 
     - name: Install Bundler
       run: gem install bundler

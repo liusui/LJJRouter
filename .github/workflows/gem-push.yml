@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build + Publish
-    runs-on: macos-latest
+    runs-on: macos-12.6.3
     permissions:
       contents: read
       packages: write

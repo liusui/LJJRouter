@@ -19,18 +19,16 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Set default Xcode version
-    run: |
-      echo "Switching Xcode to version '13.0'..."
-      xcode-select --switch /Applications/Xcode_14.2.app
+      run: xcode-select --switch /Applications/Xcode_14.2.app
 
     - name: Install Bundler
       run: gem install bundler
 
     - name: Install gems
-        run: bundle install
+      run: bundle install
 
     - name: Install pods
-        run: bundle exec pod install
+      run: bundle exec pod install
 
     - name: Build and upload
-        run: bundle exec fastlane alpha
+      run: bundle exec fastlane alpha

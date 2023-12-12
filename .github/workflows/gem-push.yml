@@ -31,4 +31,4 @@ jobs:
       run: gem install cocoapods
 
     - name: Build and Deploy with Fastlane
-      run: fastlane alpha
+      run: brew fastlane alpha

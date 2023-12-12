@@ -18,9 +18,6 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Set up Xcode
-      uses: actions/setup-xcode@latest
-
     - name: Install Bundler
       run: gem install bundler
 

@@ -1,0 +1,33 @@
+name: Ruby Gem
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    name: Build + Publish
+    runs-on: macos-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Xcode
+      uses: actions/setup-xcode@v2
+      with:
+        xcode-version: '14.2'  # 选择您的 Xcode 版本
+
+    - name: Install Bundler
+      run: gem install bundler
+
+    - name: Install Dependencies
+      run: bundle install
+
+    - name: Build and Deploy with Fastlane
+      run: bundle exec fastlane alpha

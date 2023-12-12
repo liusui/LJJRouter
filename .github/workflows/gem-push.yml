@@ -29,5 +29,8 @@ jobs:
     - name: Install Dependencies
       run: bundle install
 
+    - name: Install CocoaPods
+      run: gem install cocoapods
+
     - name: Build and Deploy with Fastlane
       run: bundle exec fastlane alpha

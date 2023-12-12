@@ -22,7 +22,7 @@ jobs:
       run: gem install bundler
 
     - name: Install Dependencies
-      run: bundle install
+      run: bundle install fastlane
 
     - name: Install CocoaPods
       run: gem install cocoapods

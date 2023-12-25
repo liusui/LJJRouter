@@ -30,5 +30,13 @@ jobs:
     - name: Install pods
       run: bundle exec pod install
 
-    - name: Build and upload
-      run: bundle exec fastlane alpha
+    - name: Commit Changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git add .
+        git commit -m "Commit Message"
+        git push
+

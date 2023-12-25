@@ -43,12 +43,3 @@ jobs:
 
     - name: Install pods
       run: bundle exec fastlane bump_version_and_commit
-
-    - name: Commit Changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      run: |
-        git add .
-        git commit -m "Commit Message"
-        git push origin master
-

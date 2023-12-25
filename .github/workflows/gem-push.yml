@@ -28,7 +28,7 @@ jobs:
       run: bundle install
 
     - name: Install pods
-      run: bundle exec pod install
+      run: bundle exec fastlane bump_version_and_commit
 
     - name: Commit Changes
       env:

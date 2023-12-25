@@ -22,17 +22,13 @@ platform :ios do
   end
 
   lane :bump_version_and_commit do
-    # 获取当前版本号
-    current_version = get_version_number
-
-    # 自增版本号
-    new_version = increment_build_number
-
-    # 提交修改到源代码管理
-    git_commit(
-      path: '.',
-      message: "Version bump to #{new_version}"
+    build_number = get_build_number#获取项目的build_number
+    b = Integer(build_number)
+    b = b + 1
+    build_number = b.to_s
+    #官方文档里并没有选择scheme的入参，所以当一个xcworkspace下有两个targets时，他们的build全部都会被更新。
+    increment_build_number(
+      build_number: build_number # set a specific number
     )
-
   end
 end

@@ -36,5 +36,5 @@ jobs:
       run: |
         git add .
         git commit -m "Commit Message"
-        git push
+        git push origin master
 

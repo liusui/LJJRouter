@@ -32,7 +32,7 @@ jobs:
 
     - name: Commit Changes
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"

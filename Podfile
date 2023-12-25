@@ -1,12 +1,19 @@
-source 'https://github.com/CocoaPods/Specs.git'
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
-use_frameworks!
-target 'LJJRouter' do
-  pod 'Alamofire'
-  pod 'Moya'
-  #, git:'git@gitee.com:zenni/Moya.git', branch: 'master'
-  pod 'BiometricAuthentication'
-  pod 'SnapKit'
-  pod 'ReachabilitySwift'  
-  pod 'Firebase'
+target 'CITest' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for CITest
+
+  target 'CITestTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'CITestUITests' do
+    # Pods for testing
+  end
+
 end

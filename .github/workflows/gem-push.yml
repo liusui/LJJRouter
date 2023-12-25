@@ -30,7 +30,9 @@ jobs:
     - name: Cache CocoaPods
       uses: actions/cache@v2
       with:
-        path: Pods
+        path: |
+          ~/.cocoapods
+          Pods
         key: ${{ runner.os }}-pods-${{ hashFiles('**/*.Podfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-pods-

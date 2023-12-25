@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "feature_cicd" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "feature_cicd" ]
 
 jobs:
   build:
@@ -26,6 +26,18 @@ jobs:
 
     - name: Install gems
       run: bundle install
+      
+    - name: Cache CocoaPods
+      uses: actions/cache@v2
+      with:
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/*.Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-
+          common-pods
+          
+    - name: Install CocoaPods
+      run: bundle exec pod install
 
     - name: Install pods
       run: bundle exec fastlane bump_version_and_commit

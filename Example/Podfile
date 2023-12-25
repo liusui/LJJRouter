@@ -1,6 +1,0 @@
-use_frameworks!
-target 'LJJRouter_Tests' do
-  pod 'LJJRouter', :path => '../'
-  
-  
-end
